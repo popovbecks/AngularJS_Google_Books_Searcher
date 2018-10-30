@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2 d-flex">
+        <div class="search-input">
+            <input ng-change="$ctrl.change()" placeholder="Search book" type="text" ng-model="$ctrl.query">
+        </div>
+        <select class="custom-select sort" ng-change="$ctrl.change()" ng-model="$ctrl.search">
+            <option selected value="inauthor">Author</option>
+            <option value="intitle">Title</option>
+        </select>
+    </div>
+</div>

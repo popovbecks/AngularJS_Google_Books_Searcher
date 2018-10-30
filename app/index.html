@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="libraryApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Google Phone Gallery</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="app.css" />
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="header/header.module.js"></script>
+  <script src="header/header.component.js"></script>
+  <script src="books-list/books-list.module.js"></script>
+  <script src="books-list/books-list.component.js"></script>
+  <script src="book-detail/book-detail.module.js"></script>
+  <script src="book-detail/book-detail.component.js"></script>
+  <script src="books-search/books-search.module.js"></script>
+  <script src="books-search/books-search.component.js"></script>
+  <script src="book-item/book-item.module.js"></script>
+  <script src="book-item/book-item.component.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+</head>
+
+<body>
+  <header></header>
+  <div class="main-wrap">
+    <div ng-view></div>
+  </div>
+
+</body>
+
+</html>

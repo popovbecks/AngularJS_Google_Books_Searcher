@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-around mt-2">
+      <books-search query="$ctrl.query" search="$ctrl.searchBy" change="$ctrl.change()"></books-search>
+    </div>
+  </div>
+  <div ng-if="!$ctrl.books.length" class="no-books-wrap d-flex flex-column align-items-center">
+    <h2 class="no-books">
+      No one book found yet
+    </h2>
+    <div class="no-books-img mt-3">
+      <img src="https://lh5.googleusercontent.com/SD2iaEtG6dj-mfRne7IQ8uaeT7cI9lVnZFk3kcOEDLOFg21iztanSXE5-LZuno3CzbxqUzkUB7n6yq9yG2NvGM2ypE7AslhKsqNqs-OzOIsxjbLXq3w1ybVoMf3on3cbQXHV4_4"
+        alt="books">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2 d-flex flex-column justify-content-center mt-2">
+      <div>
+        <book-item ng-repeat="book in $ctrl.books" book="book"></book-item>
+      </div>
+    </div>
+  </div>
+</div>

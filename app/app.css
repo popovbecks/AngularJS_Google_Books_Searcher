@@ -1,0 +1,109 @@
+body {}
+
+.main-wrap {
+  margin-top: 55px;
+}
+
+.phones {
+  list-style: none;
+}
+
+.phones li {
+  clear: both;
+  height: 115px;
+  padding-top: 15px;
+}
+
+.thumb {
+  float: left;
+  height: 100px;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  width: 100px;
+}
+
+/* books-list component */
+.no-books-wrap {
+  margin-top: 10vh;
+}
+
+.no-books {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.no-books-img img {
+  height: 200px;
+  width: auto;
+}
+
+/* search-books component */
+.search-input input {
+  height: 38px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.sort {
+  border-radius: 8px;
+
+  width: 50px;
+}
+
+.custom-select {
+  width: 120px !important;
+}
+
+/* book-item component */
+.card {
+  height: 400px;
+}
+
+.book-img {
+  width: auto;
+  height: 150px;
+}
+
+/* book detail component */
+.book-wrapper {
+  height: 93vh;
+  background: url(https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/456238/1160/772/m1/fpnw/wm0/3-.jpg?1429717245&s=9674efa561d3bf93d970eabb66e58ec9) no-repeat;
+  margin-top: 50px;
+  background-size: 100vw 93vh;
+  position: relative;
+}
+
+.book-wrapper h2,
+h4 {
+  text-align: center;
+}
+
+.left-page {
+  width: 33vw;
+  height: 70vh;
+  position: absolute;
+  top: 22vh;
+  left: 17vw;
+}
+
+.left-page img {
+  width: 20vw;
+  height: 25vh;
+}
+
+.left-page .thumb-img {
+  margin-left: 6vw;
+}
+
+.right-page {
+  width: 33vw;
+  height: 60vh;
+  overflow: auto;
+  position: absolute;
+  top: 14vh;
+  right: 14vw;
+}
+
+.buy-btn {
+  cursor: pointer;
+}
