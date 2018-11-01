@@ -5,5 +5,7 @@ component('header', {
         name: '@'
     },
     templateUrl: 'header/header.template.html',
-    controller: []
+    controller: [function HeaderController() {
+
+    }]
 });

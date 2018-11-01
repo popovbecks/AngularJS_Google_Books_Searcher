@@ -1,36 +1,44 @@
 'use strict';
 
-describe('phoneList', function() {
+describe('booksList', function () {
 
   // Load the module that contains the `phoneList` component before each test
-  beforeEach(module('phoneList'));
+  beforeEach(module('booksList'));
 
   // Test the controller
-  describe('PhoneListController', function() {
-    var $httpBackend, ctrl;
-
-    // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
-    // This allows us to inject a service and assign it to a variable with the same name
-    // as the service while avoiding a name conflict.
-    beforeEach(inject(function($componentController, _$httpBackend_) {
+  describe('BooksListController', function () {
+    var ctrl, $httpBackend;
+    var mockQuery = 'artur'
+    var mockSearchBy = 'inauthor'
+    beforeEach(inject(function ($componentController, _$httpBackend_) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('phones/phones.json')
-                  .respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+      $httpBackend.expectGET(`https://www.googleapis.com/books/v1/volumes?q=${mockQuery}+${mockSearchBy}:${mockQuery}`)
+        .respond(200, {
+          items: [{
+              title: 'book1'
+            },
+            {
+              title: 'book2'
+            }
+          ]
+        })
+      ctrl = $componentController('booksList');
+      ctrl.query = mockQuery;
+      ctrl.searchBy = mockSearchBy;
+    }))
 
-      ctrl = $componentController('phoneList');
-    }));
-
-    it('should create a `phones` property with 2 phones fetched with `$http`', function() {
-      expect(ctrl.phones).toBeUndefined();
-
+    it('should creates books-list controller instance', function () {
+      expect(ctrl).toBeTruthy();
+    });
+    it('should download books if query not undefined', function () {
+      expect(ctrl.books).toBeUndefined();
+      ctrl.arr();
       $httpBackend.flush();
-      expect(ctrl.phones).toEqual([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+      expect(ctrl.books).toEqual([{
+        title: 'book1'
+      }, {
+        title: 'book2'
+      }]);
     });
-
-    it('should set a default value for the `orderProp` property', function() {
-      expect(ctrl.orderProp).toBe('age');
-    });
-
-  });
-
+  })
 });
