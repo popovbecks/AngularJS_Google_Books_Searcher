@@ -4,10 +4,15 @@ angular.
 module('bookDetail').
 component('bookDetail', {
     templateUrl: 'book-detail/book-detail.template.html',
-    controller: ['$http', '$routeParams',
-        function BookDetailController($http, $routeParams) {
+    controller: ['$http', 'libService', '$routeParams',
+        function BookDetailController($http, libService, $routeParams) {
             var self = this;
-            self.b = 's'
+            self.addBook = function (book) {
+                book.bookId = $routeParams.bookId;
+                libService.addToLib(book).then(book => {
+                    console.log(book)
+                })
+            }
             self.redirectForBuy = function () {
 
                 window.open(self.book.infoLink)

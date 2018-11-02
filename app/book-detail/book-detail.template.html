@@ -2,17 +2,20 @@
     <div class="book-pages">
         <div class="left-page">
             <h2>{{$ctrl.book.title}}</h2>
-            <h4>Authors {{$ctrl.book.authors[0]}}</h4>
+            <h4>Author {{$ctrl.book.authors[0]}}</h4>
             <div class="thumb-img">
                 <img ng-src="{{$ctrl.book.imageLinks.thumbnail || 'https://vignette.wikia.nocookie.net/burningsuns/images/4/40/BurningSuns_unknown_book_render_1.png/revision/latest?cb=20151227170239'}}"
-                    alt="">
+                    alt="thumb">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button ng-click="$ctrl.addBook($ctrl.book)" class="btn btn-warning mt-2">Add to lib</button>
             </div>
         </div>
         <div class="right-page">
             {{$ctrl.book.description }}
         </div>
     </div>
-    <div class="buttons d-flex justify-content-between mt-2">
+    <div class="buttons d-flex justify-content-between mt-2 mb-5">
         <a href="#/books" class="btn btn-info mt-2 ml-2 buy-btn">Back</a>
         <button ng-click="$ctrl.redirectForBuy($ctrl.book.infoLink)" class="btn btn-danger buy-btn mt-2 mr-2">Buy book</button>
     </div>

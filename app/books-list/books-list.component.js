@@ -4,11 +4,11 @@ angular.
 module('booksList').
 component('booksList', {
   templateUrl: 'books-list/books-list.template.html',
-  controller: ['$http', function BooksListController($http) {
+  controller: ['libService', function BooksListController(libService) {
     var self = this;
-    self.some = 'some';
+
     self.arr = function () {
-      $http.get(`https://www.googleapis.com/books/v1/volumes?q=${self.query}+${self.searchBy}:${self.query}`).then(function (response) {
+      libService.getBooksFromApi().then(function (response) {
         if (self.query) {
           self.books = response.data.items;
         } else {

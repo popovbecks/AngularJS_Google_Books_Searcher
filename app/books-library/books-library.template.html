@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="col-md-8 offset-md-2">
+        <div ng-if="!$ctrl.books.length" class="no-books-wrap d-flex flex-column align-items-center">
+            <h2 class="no-books">
+                No books in library
+            </h2>
+            <div class="no-books-img mt-3">
+                <img src="https://lh5.googleusercontent.com/SD2iaEtG6dj-mfRne7IQ8uaeT7cI9lVnZFk3kcOEDLOFg21iztanSXE5-LZuno3CzbxqUzkUB7n6yq9yG2NvGM2ypE7AslhKsqNqs-OzOIsxjbLXq3w1ybVoMf3on3cbQXHV4_4"
+                    alt="books">
+            </div>
+        </div>
+        <div class="row mt-5" ng-repeat="book in $ctrl.books">
+            <div class="col-md-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-wrapper d-flex flex-column justify-content-between align-items-center">
+                            <div class="card-text-cont d-flex flex-column align-items-center">
+                                <h5 class="card-title">{{book.title}}</h5>
+                                <p class="card-text mb-1">{{book.authors[0]}}</p>
+                                <img ng-src="{{book.imageLinks.smallThumbnail || 'https://vignette.wikia.nocookie.net/burningsuns/images/4/40/BurningSuns_unknown_book_render_1.png/revision/latest?cb=20151227170239'}}"
+                                    alt="thumb">
+                            </div>
+                            <div class="card-buttons-cont">
+                                <a href="#/books/{{book.bookId}}" class="btn btn-primary">Read more</a>
+                                <button class="btn btn-danger" ng-click="$ctrl.deleteBook(book.id)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,6 +11,9 @@ config(['$locationProvider', '$routeProvider',
         when('/books/:bookId', {
             template: '<book-detail></book-detail>'
         }).
+        when('/library', {
+            template: '<books-library></books-library>'
+        }).
         otherwise('/books');
     }
 ]);
