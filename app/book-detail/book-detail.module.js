@@ -1,2 +1,2 @@
 'use strict';
-angular.module('bookDetail', ['ngRoute']);
+angular.module('bookDetail', ['ui.router']);

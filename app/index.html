@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="app.css" />
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/lodash/lodash.js"></script>
   <script src="app.module.js"></script>
   <script src="app.config.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
   <script src="books-library/books-library.module.js"></script>
   <script src="books-library/books-library.component.js"></script>
   <script src="library-service/library-service.service.js"></script>
@@ -30,7 +30,7 @@
 <body>
   <header></header>
   <div class="main-wrap">
-    <div ng-view></div>
+    <ui-view></ui-view>
   </div>
 
 </body>

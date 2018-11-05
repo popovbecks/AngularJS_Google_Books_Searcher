@@ -22,7 +22,7 @@
                                     alt="thumb">
                             </div>
                             <div class="card-buttons-cont">
-                                <a href="#/books/{{book.bookId}}" class="btn btn-primary">Read more</a>
+                                <a ui-sref="books-detail({bookId: book.bookId})" class="btn btn-primary">Read more</a>
                                 <button class="btn btn-danger" ng-click="$ctrl.deleteBook(book.id)">Delete</button>
                             </div>
                         </div>

@@ -1,2 +1,2 @@
 'use strict';
-angular.module('booksLibrary', ['ngRoute']);
+angular.module('booksLibrary', []);

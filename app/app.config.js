@@ -1,17 +1,28 @@
 angular.
 module('libraryApp').
-config(['$routeProvider',
-    function config($routeProvider) {
-        $routeProvider.
-        when('/books', {
-            template: '<books-list></books-list>'
-        }).
-        when('/books/:bookId', {
-            template: '<book-detail></book-detail>'
-        }).
-        when('/library', {
-            template: '<books-library></books-library>'
-        }).
-        otherwise('/books');
+config(['$stateProvider', '$urlRouterProvider',
+    function config($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/books');
+        $stateProvider
+            .state('books', {
+                url: '/books',
+                template: '<books-list></books-list>'
+            })
+
+            .state('library', {
+                url: '/library',
+                template: '<books-library></books-library>'
+            })
+            .state('books-detail', {
+                url: '/books/:bookId',
+                template: '<book-detail></book-detail>'
+            })
+        // var booksDetail = {
+        //     name: 'books-detail',
+        //     url: '/books/:bookId',
+        //    
+        // }
+
+
     }
 ]);

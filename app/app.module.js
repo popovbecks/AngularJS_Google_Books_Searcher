@@ -4,7 +4,7 @@
 angular.module('libraryApp', [
   // ...which depends on the `phoneList` module
   'header',
-  'booksList', 'ngRoute', 'booksLibrary', 'bookDetail', 'booksSearch', 'bookItem'
+  'booksList', 'ui.router', 'booksLibrary', 'bookDetail', 'booksSearch', 'bookItem'
 ])
 
 // .constant('_', window._);
