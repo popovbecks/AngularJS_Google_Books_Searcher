@@ -1,9 +1,7 @@
 angular.
 module('libraryApp').
-config(['$locationProvider', '$routeProvider',
-    function config($locationProvider, $routeProvider) {
-        //$locationProvider.hashPrefix('!');
-
+config(['$routeProvider',
+    function config($routeProvider) {
         $routeProvider.
         when('/books', {
             template: '<books-list></books-list>'

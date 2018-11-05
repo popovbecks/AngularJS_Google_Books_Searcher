@@ -8,7 +8,7 @@ component('booksList', {
     var self = this;
 
     self.arr = function () {
-      libService.getBooksFromApi().then(function (response) {
+      libService.getBooksFromApi(self.query, self.searchBy).then(function (response) {
         if (self.query) {
           self.books = response.data.items;
         } else {
