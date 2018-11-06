@@ -116,5 +116,9 @@ h2 {
 
 
 .card-wrapper {
-  height: 300px;
+  height: 345px;
+}
+
+.lib-title {
+  color: darkgreen;
 }

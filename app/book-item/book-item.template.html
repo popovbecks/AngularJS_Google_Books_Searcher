@@ -1,6 +1,6 @@
 <div class="card text-center mb-4">
     <div class="card-header">
-        Publisher "{{$ctrl.book.volumeInfo.publisher || 'unknown'}}"
+        Category "{{$ctrl.book.volumeInfo.categories[0] || 'unknown'}}"
     </div>
     <div class="card-body">
         <h5 class="card-title">{{$ctrl.book.volumeInfo.title}}</h5>

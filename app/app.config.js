@@ -17,11 +17,10 @@ config(['$stateProvider', '$urlRouterProvider',
                 url: '/books/:bookId',
                 template: '<book-detail></book-detail>'
             })
-        // var booksDetail = {
-        //     name: 'books-detail',
-        //     url: '/books/:bookId',
-        //    
-        // }
+            .state('chart', {
+                url: '/barChart',
+                template: '<bar-chart></bar-chart>'
+            })
 
 
     }

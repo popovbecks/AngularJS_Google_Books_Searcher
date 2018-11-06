@@ -8,7 +8,7 @@ component('bookDetail', {
         function BookDetailController($http, libService, $stateParams) {
             var self = this;
             self.addBook = function (book) {
-                book.bookId = $routeParams.bookId;
+                book.bookId = $stateParams.bookId;
                 libService.addToLib(book).then(book => {
                     console.log(book)
                 })

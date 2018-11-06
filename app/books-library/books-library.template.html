@@ -1,5 +1,8 @@
 <div class="container-fluid">
     <div class="col-md-8 offset-md-2">
+        <div class="row d-flex justify-content-center pt-4 pb-2">
+            <h1 class="lib-title">Book list</h1>
+        </div>
         <div ng-if="!$ctrl.books.length" class="no-books-wrap d-flex flex-column align-items-center">
             <h2 class="no-books">
                 No books in library
@@ -9,7 +12,7 @@
                     alt="books">
             </div>
         </div>
-        <div class="row mt-5" ng-repeat="book in $ctrl.books">
+        <div class="row mt-2" ng-repeat="book in $ctrl.books">
             <div class="col-md-12">
 
                 <div class="card">
@@ -17,7 +20,8 @@
                         <div class="card-wrapper d-flex flex-column justify-content-between align-items-center">
                             <div class="card-text-cont d-flex flex-column align-items-center">
                                 <h5 class="card-title">{{book.title}}</h5>
-                                <p class="card-text mb-1">{{book.authors[0]}}</p>
+                                <p class="mb-0">Categories: {{book.categories[0] || 'unknown'}}</p>
+                                <p class="card-text mb-0">{{book.authors[0]}}</p>
                                 <img ng-src="{{book.imageLinks.smallThumbnail || 'https://vignette.wikia.nocookie.net/burningsuns/images/4/40/BurningSuns_unknown_book_render_1.png/revision/latest?cb=20151227170239'}}"
                                     alt="thumb">
                             </div>
