@@ -8,8 +8,6 @@ angular.module('barChart')
                     return item.data;
 
                 }).then(b => {
-                    console.log(b)
-                    this.all = b.length
                     this.science = this.categoryFilter(b, 'Science');
                     this.tech = this.categoryFilter(b, 'Technology');
                     this.bus = this.categoryFilter(b, 'Economics');
@@ -26,8 +24,6 @@ angular.module('barChart')
                     this.music = this.categoryFilter(b, "Music");
                     this.hob = this.categoryFilter(b, "Hobbies")
                     this.other = this.getOther(b);
-
-                    console.log(this.science)
                 }).then(a => {
                     this.options = {
                         chart: {
@@ -47,7 +43,7 @@ angular.module('barChart')
                             },
                             showValues: true,
                             valueFormat: function (d) {
-                                return d3.format(',.4f')(d);
+                                return d3.format(',.0f')(d);
                             },
                             duration: 500,
                             xAxis: {

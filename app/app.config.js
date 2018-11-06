@@ -21,6 +21,10 @@ config(['$stateProvider', '$urlRouterProvider',
                 url: '/barChart',
                 template: '<bar-chart></bar-chart>'
             })
+            .state('lang', {
+                url: '/bookLang',
+                template: '<book-lang></book-lang>'
+            })
 
 
     }
