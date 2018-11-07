@@ -1,2 +1,2 @@
 'use strict';
-angular.module('bookDetail', ['ui.router']);
+angular.module('bookDetail', []);
