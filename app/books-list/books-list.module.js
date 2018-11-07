@@ -1,4 +1,4 @@
 'use strict';
 angular.module('booksList', [
-    'booksSearch', 'bookItem', 'ngRoute'
+    'ui.router'
 ]);

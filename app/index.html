@@ -3,13 +3,27 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+  <title>Google Books Library Searcher</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.css">
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.module.js"></script>
+  <script src="https://cdn.rawgit.com/angular-translate/bower-angular-translate/2.5.0/angular-translate.js"></script>
+  <script src="dots.directive.js"></script>
   <script src="app.config.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.5/angular-nvd3.min.js"></script>
+  <script defer src="bar-chart/bar-chart.module.js"></script>
+  <script defer src="bar-chart/bar-chart.component.js"></script>
+  <script src="book-lang/book-lang.module.js"></script>
+  <script src="book-lang/book-lang.component.js"></script>
+  <script src="books-library/books-library.module.js"></script>
+  <script src="books-library/books-library.component.js"></script>
+  <script src="library-service/library-service.service.js"></script>
   <script src="header/header.module.js"></script>
   <script src="header/header.component.js"></script>
   <script src="books-list/books-list.module.js"></script>
@@ -20,15 +34,14 @@
   <script src="books-search/books-search.component.js"></script>
   <script src="book-item/book-item.module.js"></script>
   <script src="book-item/book-item.component.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+
 </head>
 
 <body>
   <header></header>
   <div class="main-wrap">
-    <div ng-view></div>
+    <ui-view></ui-view>
   </div>
-
 </body>
 
 </html>

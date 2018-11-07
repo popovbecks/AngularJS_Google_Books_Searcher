@@ -9,7 +9,6 @@ component('booksSearch', {
     },
     templateUrl: 'books-search/books-search.template.html',
     controller: [function BooksSearchController() {
-        this.search = 'inauthor'
-        this.changes = function () {}
+        this.search = 'intitle'
     }]
 });

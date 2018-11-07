@@ -66,7 +66,7 @@ body {}
 
 /* book detail component */
 .book-wrapper {
-  height: 93vh;
+  height: 90vh;
   background: url(https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/456238/1160/772/m1/fpnw/wm0/3-.jpg?1429717245&s=9674efa561d3bf93d970eabb66e58ec9) no-repeat;
   margin-top: 50px;
   background-size: 100vw 93vh;
@@ -78,21 +78,26 @@ h4 {
   text-align: center;
 }
 
+h2 {
+  font-size: 26px;
+  color: darkgreen
+}
+
 .left-page {
   width: 33vw;
   height: 70vh;
   position: absolute;
-  top: 22vh;
+  top: 18vh;
   left: 17vw;
 }
 
 .left-page img {
-  width: 20vw;
+  width: 10vw;
   height: 25vh;
 }
 
 .left-page .thumb-img {
-  margin-left: 6vw;
+  margin-left: 11vw;
 }
 
 .right-page {
@@ -106,4 +111,45 @@ h4 {
 
 .buy-btn {
   cursor: pointer;
+}
+
+
+
+.card-wrapper {
+  height: 345px;
+}
+
+.lib-title {
+  color: darkgreen;
+}
+
+/* header component */
+
+.myActive {
+  color: burlywood !important;
+}
+
+.en {
+  display: inline-block;
+  height: 20px;
+  width: 30px;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 45%;
+  margin-right: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.ua {
+  display: inline-block;
+  height: 20px;
+  width: 30px;
+  background: url(https://fotw.info/images/u/ua.gif);
+  background-size: cover;
+  background-position: center;
+  border-radius: 45%;
+  cursor: pointer;
+  vertical-align: middle;
 }

@@ -4,16 +4,34 @@ angular.
 module('bookDetail').
 component('bookDetail', {
     templateUrl: 'book-detail/book-detail.template.html',
-    controller: ['$http', '$routeParams',
-        function BookDetailController($http, $routeParams) {
+    controller: ['$http', 'libService', '$stateParams',
+        function BookDetailController($http, libService, $stateParams) {
+            this.getAll = function () {
+                libService.getBooksFromLib().then(books => {
+                    this.books = books.data;
+                }).then(a => {
+                    this.ids = this.books.map(b => {
+                        return b.bookId;
+                    })
+                })
+            }
+            this.$onInit = () => {
+                this.getAll();
+            }
             var self = this;
+            self.addBook = function (book) {
+                book.bookId = $stateParams.bookId;
+                libService.addToLib(book).then(book => {})
+            }
             self.redirectForBuy = function () {
 
                 window.open(self.book.infoLink)
             }
-            $http.get(`https://www.googleapis.com/books/v1/volumes/${$routeParams.bookId}`).then(function (response) {
+            $http.get(`https://www.googleapis.com/books/v1/volumes/${$stateParams.bookId}`).then(function (response) {
                 self.book = response.data.volumeInfo;
-                console.log(self.book.infoLink)
+                self.data = response.data
+            }).then(b => {
+                this.contains = this.ids.filter(b => b === self.data.id);
             });
         }
     ]
