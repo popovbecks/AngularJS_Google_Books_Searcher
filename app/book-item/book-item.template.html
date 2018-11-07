@@ -3,7 +3,7 @@
         Category "{{$ctrl.book.volumeInfo.categories[0] || 'unknown'}}"
     </div>
     <div class="card-body">
-        <h5 class="card-title">{{$ctrl.book.volumeInfo.title}}</h5>
+        <h5 ng-if="$ctrl.book" class="card-title">{{$ctrl.book.volumeInfo.title | dotsFilter: 50}}</h5>
         <p class="card-text">Author: {{$ctrl.book.volumeInfo.authors[0]}}</p>
         <p>
             <img class="card-img-top book-img" ng-src="{{$ctrl.book.volumeInfo.imageLinks.smallThumbnail || 'https://vignette.wikia.nocookie.net/burningsuns/images/4/40/BurningSuns_unknown_book_render_1.png/revision/latest?cb=20151227170239'}}"

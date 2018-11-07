@@ -1,5 +1,6 @@
 angular.module('libraryApp')
     .service('libService', function ($http) {
+        this.isAdded = false;
 
         this.getBooksFromApi = function (query, searchBy) {
             return $http.get(`https://www.googleapis.com/books/v1/volumes?q=${query}+${searchBy}:${query}`)
