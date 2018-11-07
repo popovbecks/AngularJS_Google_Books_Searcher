@@ -4,7 +4,7 @@ angular.
 module('booksList').
 component('booksList', {
   templateUrl: 'books-list/books-list.template.html',
-  controller: ['libService', function BooksListController(libService) {
+  controller: ['libService', "$translate", function BooksListController(libService, translate) {
     var self = this;
 
     self.arr = function () {

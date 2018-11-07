@@ -5,7 +5,9 @@ component('header', {
         name: '@'
     },
     templateUrl: 'header/header.template.html',
-    controller: [function HeaderController() {
-
+    controller: ["$translate", function HeaderController($translate) {
+        this.changeLanguage = function (lang) {
+            $translate.use(lang);
+        }
     }]
 });

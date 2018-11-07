@@ -2,5 +2,5 @@
 
 angular.module('libraryApp', [
   'header',
-  'booksList', 'ui.router', 'bookLang', 'booksLibrary', 'nvd3', 'bookDetail', 'booksSearch', 'barChart', 'bookItem',
+  'booksList', 'pascalprecht.translate', 'ui.router', 'bookLang', 'booksLibrary', 'nvd3', 'bookDetail', 'booksSearch', 'barChart', 'bookItem',
 ])

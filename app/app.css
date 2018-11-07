@@ -128,3 +128,28 @@ h2 {
 .myActive {
   color: burlywood !important;
 }
+
+.en {
+  display: inline-block;
+  height: 20px;
+  width: 30px;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 45%;
+  margin-right: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.ua {
+  display: inline-block;
+  height: 20px;
+  width: 30px;
+  background: url(https://fotw.info/images/u/ua.gif);
+  background-size: cover;
+  background-position: center;
+  border-radius: 45%;
+  cursor: pointer;
+  vertical-align: middle;
+}

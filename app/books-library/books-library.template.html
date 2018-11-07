@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div class="col-md-8 offset-md-2">
         <div class="row d-flex justify-content-center pt-4 pb-2">
-            <h1 class="lib-title">Book list</h1>
+            <h1 class="lib-title">{{'booksList' | translate}}</h1>
         </div>
         <div ng-if="!$ctrl.books.length" class="no-books-wrap d-flex flex-column align-items-center">
             <h2 class="no-books">
-                No books in library
+                {{'noBooks' | translate}}
             </h2>
             <div class="no-books-img mt-3">
                 <img src="https://lh5.googleusercontent.com/SD2iaEtG6dj-mfRne7IQ8uaeT7cI9lVnZFk3kcOEDLOFg21iztanSXE5-LZuno3CzbxqUzkUB7n6yq9yG2NvGM2ypE7AslhKsqNqs-OzOIsxjbLXq3w1ybVoMf3on3cbQXHV4_4"
@@ -20,14 +20,17 @@
                         <div class="card-wrapper d-flex flex-column justify-content-between align-items-center">
                             <div class="card-text-cont d-flex flex-column align-items-center">
                                 <h5 ng-if="book" class="card-title">{{book.title | dotsFilter: 60}}</h5>
-                                <p class="mb-0">Categories: {{book.categories[0] || 'unknown'}}</p>
+                                <p class="mb-0">{{'category' | translate}}: {{book.categories[0] || 'unknown'}}</p>
                                 <p class="card-text mb-0">{{book.authors[0]}}</p>
                                 <img ng-src="{{book.imageLinks.smallThumbnail || 'https://vignette.wikia.nocookie.net/burningsuns/images/4/40/BurningSuns_unknown_book_render_1.png/revision/latest?cb=20151227170239'}}"
                                     alt="thumb">
                             </div>
                             <div class="card-buttons-cont">
-                                <a ui-sref="books-detail({bookId: book.bookId})" class="btn btn-primary">Read more</a>
-                                <button class="btn btn-danger" ng-click="$ctrl.deleteBook(book.id)">Delete</button>
+                                <a ui-sref="books-detail({bookId: book.bookId})" class="btn btn-primary">{{'moreDetails'
+                                    |
+                                    translate}}</a>
+                                <button class="btn btn-danger" ng-click="$ctrl.deleteBook(book.id)">{{'delete' |
+                                    translate}}</button>
                             </div>
                         </div>
                     </div>

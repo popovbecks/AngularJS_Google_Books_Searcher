@@ -1,15 +1,15 @@
 <div class="card text-center mb-4">
     <div class="card-header">
-        Category "{{$ctrl.book.volumeInfo.categories[0] || 'unknown'}}"
+        {{'category'| translate}} "{{$ctrl.book.volumeInfo.categories[0] || 'unknown'}}"
     </div>
     <div class="card-body">
         <h5 ng-if="$ctrl.book" class="card-title">{{$ctrl.book.volumeInfo.title | dotsFilter: 50}}</h5>
-        <p class="card-text">Author: {{$ctrl.book.volumeInfo.authors[0]}}</p>
+        <p class="card-text">{{'itemAuthor'| translate}}: {{$ctrl.book.volumeInfo.authors[0]}}</p>
         <p>
             <img class="card-img-top book-img" ng-src="{{$ctrl.book.volumeInfo.imageLinks.smallThumbnail || 'https://vignette.wikia.nocookie.net/burningsuns/images/4/40/BurningSuns_unknown_book_render_1.png/revision/latest?cb=20151227170239'}}"
                 alt="Card image cap">
         </p>
 
-        <a ui-sref="books-detail({bookId: $ctrl.book.id})" class="btn btn-primary">More details</a>
+        <a ui-sref="books-detail({bookId: $ctrl.book.id})" class="btn btn-primary">{{'moreDetails' | translate}}</a>
     </div>
 </div>
