@@ -23,13 +23,15 @@ component('bookDetail', {
                 book.bookId = $stateParams.bookId;
                 libService.addToLib(book).then(book => {})
             }
-            self.redirectForBuy = function () {
-
-                window.open(self.book.infoLink)
+            self.redirect = function (url) {
+                window.open(url)
             }
             $http.get(`https://www.googleapis.com/books/v1/volumes/${$stateParams.bookId}`).then(function (response) {
                 self.book = response.data.volumeInfo;
-                self.data = response.data
+                self.data = response.data;
+                self.pdfLink = self.data.accessInfo.pdf.acsTokenLink;
+                self.epubLink = self.data.accessInfo.epub.acsTokenLink;
+                console.log(self.data)
             }).then(b => {
                 this.contains = this.ids.filter(b => b === self.data.id);
             });

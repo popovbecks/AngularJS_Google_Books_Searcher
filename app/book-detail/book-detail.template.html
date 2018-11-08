@@ -10,6 +10,10 @@
             <div class="d-flex justify-content-center">
                 <button ng-if="!$ctrl.contains.length" ng-click="$ctrl.addBook($ctrl.book)" class="btn btn-warning mt-2">{{'add'
                     | translate}}</button>
+                <a ng-if="$ctrl.contains.length && $ctrl.data.accessInfo.pdf.isAvailable" ng-click="$ctrl.redirect($ctrl.pdfLink)"
+                    class="pdf-btn mt-2 mr-2"></a>
+                <a ng-if="$ctrl.contains.length && $ctrl.data.accessInfo.epub.isAvailable" ng-click="$ctrl.redirect($ctrl.epubLink)"
+                    class="epub-btn mt-2"></a>
             </div>
         </div>
         <div class="right-page">
@@ -18,7 +22,7 @@
     </div>
     <div class="buttons d-flex justify-content-between mt-2 mb-5">
         <a ui-sref="books" class="btn btn-info mt-2 ml-2 buy-btn">{{'back' | translate}}</a>
-        <button ng-click="$ctrl.redirectForBuy($ctrl.book.infoLink)" class="btn btn-danger buy-btn mt-2 mr-2">{{'buy' |
+        <button ng-click="$ctrl.redirect($ctrl.book.infoLink)" class="btn btn-danger buy-btn mt-2 mr-2">{{'buy' |
             translate}}</button>
     </div>
 </div>

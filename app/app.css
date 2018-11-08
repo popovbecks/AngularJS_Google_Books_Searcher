@@ -123,6 +123,24 @@ h2 {
   color: darkgreen;
 }
 
+.pdf-btn {
+  background: url(https://www.linuxvoice.com/wp-content/uploads/2016/12/adobe-pdf-icon.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.epub-btn {
+  background: url(https://www.zamzar.com/images/filetypes/epub.png);
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  cursor: pointer;
+}
+
 /* header component */
 
 .myActive {
